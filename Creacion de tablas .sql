@@ -221,3 +221,26 @@ CREATE TABLE IntegracionesExternas (
     Descripción TEXT,
     FechaIntegración DATETIME NOT NULL
 );
+
+CREATE TABLE Paqueteria (
+    PaqueteID INT AUTO_INCREMENT PRIMARY KEY,
+    RemitenteID INT NOT NULL,
+    DestinatarioID INT NOT NULL,
+    Origen VARCHAR(100) NOT NULL,
+    Destino VARCHAR(100) NOT NULL,
+    Peso DECIMAL(10,2) NOT NULL,
+    Dimensiones VARCHAR(50),
+    Costo DECIMAL(10,2) NOT NULL,
+    Estado ENUM('En tránsito', 'Entregado', 'Devuelto', 'Extraviado') DEFAULT 'En tránsito',
+    FechaEnvio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FechaEntrega DATETIME,
+    TransportistaID INT,
+    IdSedeOrigen INT NOT NULL,
+    IdSedeDestino INT NOT NULL,
+    FOREIGN KEY (RemitenteID) REFERENCES Clientes(IdCliente),
+    FOREIGN KEY (DestinatarioID) REFERENCES Clientes(IdCliente),
+    FOREIGN KEY (TransportistaID) REFERENCES Empleados(IdEmpleado),
+    FOREIGN KEY (IdSedeOrigen) REFERENCES Sedes(IdSede),
+    FOREIGN KEY (IdSedeDestino) REFERENCES Sedes(IdSede)
+);
+
