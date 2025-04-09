@@ -1,5 +1,5 @@
-CREATE DATABASE TERMINALNORTE;
-USE TERMINALNORTE;
+CREATE DATABASE TERMINAL;
+USE TERMINAL;
 CREATE TABLE Departamentos (
     id_departamento INT PRIMARY KEY,
     Nombre VARCHAR(255)
@@ -164,14 +164,6 @@ CREATE TABLE Metodo_pago (
     Nombre VARCHAR(255)
 );
 
-CREATE TABLE Seguro (
-    id_seguro INT PRIMARY KEY,
-    Nombre VARCHAR(255),
-    Descripcion VARCHAR(255),
-    id_empresa INT,
-    FOREIGN KEY (id_empresa) REFERENCES Empresas(id_empresa)
-);
-
 CREATE TABLE Viajes (
     id_viaje INT PRIMARY KEY,
     Fecha_salida DATETIME,
@@ -218,14 +210,12 @@ CREATE TABLE Factura (
     id_cliente INT,
     id_empleado INT,
     id_boleto INT,
-    id_seguro INT,
     id_equipaje INT,
     id_viaje INT,
     id_metodo_pago INT,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_empleado) REFERENCES Empleados(cedula_empleado),
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto),
-    FOREIGN KEY (id_seguro) REFERENCES Seguro(id_seguro),
     FOREIGN KEY (id_equipaje) REFERENCES Equipaje(id_equipaje),
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
     FOREIGN KEY (id_metodo_pago) REFERENCES Metodo_pago(id_metodo_pago)
@@ -236,6 +226,7 @@ CREATE TABLE Tipo_mercancia (
     Nombre VARCHAR(100),
     Descripcion TEXT
 );
+
 CREATE TABLE Mercancia (
     id_mercancia INT PRIMARY KEY,
     descripcion VARCHAR(255),
@@ -245,10 +236,10 @@ CREATE TABLE Mercancia (
     id_cliente INT,
     id_viaje INT,
     id_boleto INT,
+    id_factura INT,
     FOREIGN KEY (id_tipo_mercancia) REFERENCES Tipo_mercancia(id_tipo_mercancia),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
-    FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto)
+    FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto),
+    FOREIGN KEY (id_factura) REFERENCES Factura(id_factura)
 );
-
-
