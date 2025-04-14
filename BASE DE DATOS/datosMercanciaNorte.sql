@@ -53,7 +53,7 @@ INSERT INTO Mercancia (id_mercancia, descripcion, peso, valor_estimado, id_tipo_
 (185, 'Bicicleta de montaña', 18.0, 600000, 176, 185, 185, 185);
 
 -- inserts Terminal Centro
-INSERT INTO "Tipo_mercancia" ("id_tipo_mercancia", "Nombre", "Descripcion") VALUES
+INSERT INTO Tipo_mercancia ("id_tipo_mercancia", "Nombre", "Descripcion") VALUES
 (201, 'Maleta', 'Maletas de tamaño personal o mediano, aptas para viajes en bus'),
 (202, 'Mochila', 'Mochilas medianas para uso personal durante el viaje'),
 (203, 'Bolso', 'Bolsos de tamaño personal que los pasajeros pueden llevar consigo'),
@@ -65,7 +65,7 @@ INSERT INTO "Tipo_mercancia" ("id_tipo_mercancia", "Nombre", "Descripcion") VALU
 (209, 'Sillas de ruedas', 'Sillas de ruedas que los pasajeros pueden necesitar para su movilidad'),
 (210, 'Cajas personales', 'Cajas de tamaño pequeño o mediano que los pasajeros pueden llevar consigo');
 
-INSERT INTO "Mercancia" ("id_mercancia", "descripcion", "peso", "valor_estimado", "id_tipo_mercancia", "id_cliente", "id_viaje", "id_boleto") VALUES
+INSERT INTO Mercancia ("id_mercancia", "descripcion", "peso", "valor_estimado", "id_tipo_mercancia", "id_cliente", "id_viaje", "id_boleto") VALUES
 (201, 'Maleta de mano', 10.5, 250000, 201, 101, 201, 201),
 (202, 'Mochila escolar', 5.0, 100000, 202, 102, 202, 202),
 (203, 'Bolso de mano', 3.0, 50000, 203, 103, 203, 203),
