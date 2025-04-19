@@ -82,3 +82,38 @@ INSERT INTO Mercancia ("id_mercancia", "descripcion", "peso", "valor_estimado", 
 (214, 'Carro de bebé pequeño', 8.0, 200000, 205, 114, 114, 214),
 (215, 'Bicicleta de montaña', 18.0, 600000, 206, 115, 115, 215);
 
+-- inserts terminal occidente
+
+INSERT INTO "Tipo_mercancia" (id_tipo_mercancia, Nombre, Descripcion) VALUES
+(181, 'Maleta', 'Maletas de tamaño personal o mediano, aptas para viajes en bus'),
+(182, 'Mochila', 'Mochilas medianas para uso personal durante el viaje'),
+(183, 'Bolso', 'Bolsos de tamaño personal que los pasajeros pueden llevar consigo'),
+(184, 'Equipaje de mano', 'Equipaje pequeño que puede ir a bordo del bus'),
+(185, 'Carro de bebé', 'Carritos pequeños para niños que acompañan a los pasajeros'),
+(186, 'Bicicleta', 'Bicicletas plegables o desmontadas, que pueden ser transportadas'),
+(187, 'Instrumentos musicales', 'Instrumentos de tamaño mediano, como guitarras o violines'),
+(188, 'Equipos electrónicos', 'Equipos como laptops o cámaras que los pasajeros pueden llevar'),
+(189, 'Sillas de ruedas', 'Sillas de ruedas que los pasajeros pueden necesitar para su movilidad'),
+(190, 'Cajas personales', 'Cajas de tamaño pequeño o mediano que los pasajeros pueden llevar consigo');
+
+INSERT INTO "Mercancia" (id_mercancia, descripcion, peso, valor_estimado, id_tipo_mercancia, id_cliente, id_viaje, id_boleto) VALUES
+(181, 'Maleta de mano', 10.5, 250000, 181, 181, 181, 181),  -- Con cliente
+(182, 'Mochila escolar', 5.0, 100000, 182, 182, 182, 182),  -- Con cliente
+(183, 'Bolso de mano', 3.0, 50000, 183, 183, 183, 183),  -- Con cliente
+(184, 'Equipaje de mano', 8.0, 150000, 184, 184, 184, 184),  -- Con cliente
+(185, 'Carro de bebé', 12.0, 350000, 185, 185, 185, 185),  -- Con cliente
+(186, 'Bicicleta plegable', 15.0, 500000, 186, 186, 186, 186),  -- Con cliente
+(187, 'Guitarra acústica', 6.5, 300000, 187, 187, 187, 187),  -- Con cliente
+(188, 'Laptop', 2.0, 1500000, 188, 188, 188, 188),  -- Con cliente
+(189, 'Silla de ruedas', 12.0, 1000000, 189, 189, 189, 189),  -- Con cliente
+(190, 'Caja con ropa', 20.0, 100000, 190, 190, 190, 190),  -- Con cliente
+(191, 'Mochila deportiva', 7.0, 80000, 182, 191, 191, 191),  -- Con cliente
+(192, 'Maleta pequeña', 9.0, 200000, 181, 192, 192, 192),  -- Con cliente
+(193, 'Bolso de viaje', 4.5, 70000, 183, 193, 193, 193),  -- Con cliente
+(194, 'Carro de bebé pequeño', 8.0, 200000, 185, 194, 194, 194),  -- Con cliente
+(195, 'Bicicleta de montaña', 18.0, 600000, 186, 195, 195, 195),  -- Con cliente
+(196, 'Silla plegable', 3.0, 150000, 189, NULL, 196, 196),  -- Sin cliente
+(197, 'Caja de herramientas', 25.0, 400000, 190, NULL, 197, 197),  -- Sin cliente
+(198, 'Set de pinturas', 2.0, 50000, 187, NULL, 198, 198),  -- Sin cliente
+(199, 'Bicicleta para niños', 10.0, 250000, 186, NULL, 199, 199),  -- Sin cliente
+(200, 'Guitarra eléctrica', 7.0, 800000, 187, NULL, 200, 200);  -- Sin cliente
