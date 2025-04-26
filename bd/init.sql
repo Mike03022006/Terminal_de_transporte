@@ -6,6 +6,10 @@ CREATE TABLE IF NOT EXISTS roles (
     nombre VARCHAR(255) NOT NULL
 );
 
+-- Insertar Roles
+INSERT INTO roles (nombre) VALUES
+('Administrador');
+
 CREATE TABLE IF NOT EXISTS usuarios (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
