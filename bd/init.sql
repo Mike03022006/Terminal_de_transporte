@@ -1,5 +1,22 @@
 CREATE DATABASE IF NOT EXISTS terminal;
 USE terminal;
+
+CREATE TABLE IF NOT EXISTS roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre ENUM('Profesor', 'Estudiante') NOT NULL
+);
+
+-- Tabla de Usuarios
+CREATE TABLE usuarios (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    rol_id INT NOT NULL,
+    FOREIGN KEY (rol_id) REFERENCES roles(id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS Departamentos (
     id_departamento INT PRIMARY KEY,
     Nombre VARCHAR(255)
