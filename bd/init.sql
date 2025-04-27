@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 INSERT INTO usuarios (id, nombre, apellido, correo, contrasena, rol_id)
-VALUES (123456789,'admin', '1', 'admin@mail.com', '$2b$04$mD24Disnzu4B7NDf2Od.OOcByVQspVfNT3qDAnvaPFsbdeleYJq6u', 1)
+VALUES (123456789,'admin', '1', 'admin@mail.com', '$2b$04$mD24Disnzu4B7NDf2Od.OOcByVQspVfNT3qDAnvaPFsbdeleYJq6u', 1);
 
 CREATE TABLE IF NOT EXISTS Departamentos (
     id_departamento INT PRIMARY KEY,
