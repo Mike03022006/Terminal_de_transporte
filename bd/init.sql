@@ -802,7 +802,7 @@ INSERT INTO Destinos (id_destino, Nombre, id_modulo, id_ciudad_origen, id_ciudad
 (0029, 'Turbaco', 0023, 0030, 0029),  
 (0030, 'San Marcos', 0025, 0029, 0030);  
 
-INSERT INTO paradas_intermedias (id_parada, Nombre_parada, id_ciudad) VALUES  
+INSERT INTO Paradas_intermedias (id_parada, Nombre_parada, id_ciudad) VALUES  
 (001,'Parada a restaurante', 001),   
 (002,'Parada de gasolina', 002),   
 (003,'Parada por llanta', 003),   
@@ -930,7 +930,7 @@ INSERT INTO Detalle_Buses_Rutas (Id_bus, id_ruta) VALUES
 ('JXK-086', 0029),  
 ('HIS-063', 0030);  
 
-INSERT INTO viajes (id_viaje, Fecha_salida, Valor, id_bus, id_conductor, id_ruta, id_ciudad_origen, id_ciudad_destino) VALUES   
+INSERT INTO Viajes (id_viaje, Fecha_salida, Valor, id_bus, id_conductor, id_ruta, id_ciudad_origen, id_ciudad_destino) VALUES   
 (001, '2023-01-15', 102.45, 'ABC-123', 100001, 001, 002, 001),    
 (002, '2023-02-08', 215.78, 'CDE-567', 100019, 002, 001, 002),   
 (003, '2023-03-22', 345.90, 'HIJ-123', 100021, 003, 004, 003),   
