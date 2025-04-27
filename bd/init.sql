@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS Metodo_pago (
 );
 
 CREATE TABLE IF NOT EXISTS Viajes (
-    id_viaje INT PRIMARY KEY,
+    id_viaje INT AUTO_INCREMENT PRIMARY KEY,
     Fecha_salida DATETIME,
     Valor DECIMAL(10, 2),
     id_bus VARCHAR(50),
