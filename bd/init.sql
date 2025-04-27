@@ -607,7 +607,7 @@ INSERT INTO Tipo_empleado (id_tipo_empleado, Nombre, Descripcion)  VALUES
 (029, 'Consultor de Proyectos', 'Asesora en la planificación y ejecución de proyectos'), 
 (030, 'Promotor de Ventas', 'Promociona los servicios de la empresa ante los clientes'); 
 
-INSERT INTO empleados (cedula_empleado, Nombres, Apellidos, Telefono, correo, id_ciudad_origen, id_ciudad_residencia, id_tipo_empleado, id_Sede) VALUES 
+INSERT INTO Empleados (cedula_empleado, Nombres, Apellidos, Telefono, correo, id_ciudad_origen, id_ciudad_residencia, id_tipo_empleado, id_Sede) VALUES 
 
 (100001, 'Juan', 'Perez', '3001234567', 'juan.perez@empresa.com', 001, 0030, 001, 001),  
 (100002, 'Maria', 'Gomez', '3002345678', 'maria.gomez@empresa.com', 002, 0029, 002, 002),  
