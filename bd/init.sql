@@ -246,17 +246,17 @@ CREATE TABLE IF NOT EXISTS Mercancia (
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto)
 );
 CREATE TABLE IF NOT EXISTS Factura (
-    id_factura INT PRIMARY KEY,
+    id_factura INT AUTO_INCREMENT PRIMARY KEY,
     Fecha_facturacion DATETIME DEFAULT CURRENT_TIMESTAMP,
     Valor_total DECIMAL(10, 2),
     lleva_mercancia BOOLEAN, 
     id_cliente INT,
     id_empleado INT,
     id_boleto INT,
-    id_equipaje INT,
+    id_equipaje INT NULL,
     id_viaje INT,
     id_metodo_pago INT,
-    id_seguro INT,
+    id_seguro INT NULL,
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_empleado) REFERENCES Empleados(cedula_empleado),
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto),
