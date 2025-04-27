@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS Destinos (
 );
 
 CREATE TABLE IF NOT EXISTS Tipo_empleado (
-    id_tipo_empleado INT PRIMARY KEY,
+    id_tipo_empleado INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(255),
     descripcion TEXT
 );
