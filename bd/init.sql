@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS Empleados (
 );
 
 CREATE TABLE IF NOT EXISTS Tipo_bus (
-    id_tipo_bus INT PRIMARY KEY,
+    id_tipo_bus INT AUTO_INCREMENT PRIMARY KEY ,
     Nombre VARCHAR(255)
 );
 
