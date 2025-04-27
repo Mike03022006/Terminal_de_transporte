@@ -258,7 +258,7 @@ CREATE TABLE IF NOT EXISTS Envio(
 
 CREATE TABLE IF NOT EXISTS Checkout(
     id_checkout INT AUTO_INCREMENT PRIMARY KEY,
-    id_envio INT,
+    id_envio INT,     
     id_metodo_pago INT,
     FOREIGN KEY (id_envio) REFERENCES Envio(id_envio),
     FOREIGN KEY (id_metodo_pago) REFERENCES Metodo_pago(id_metodo_pago)
