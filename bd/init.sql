@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Departamentos (
 );
 
 CREATE TABLE IF NOT EXISTS Ciudades (
-    id_ciudad INT PRIMARY KEY,
+    id_ciudad INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(255),
     id_departamento INT,
     FOREIGN KEY (id_departamento) REFERENCES Departamentos(id_departamento)
