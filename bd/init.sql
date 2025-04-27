@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS Viajes (
 );
 
 CREATE TABLE IF NOT EXISTS Boletos (
-    id_boleto INT PRIMARY KEY,
+    id_boleto INT AUTO_INCREMENT PRIMARY KEY,
     Numero_asiento INT,
     id_destino INT,
     id_empresa INT,
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS Mercancia (
 );
 CREATE TABLE IF NOT EXISTS Factura (
     id_factura INT PRIMARY KEY,
-    Fecha_facturacion DATE,
+    Fecha_facturacion DATETIME DEFAULT CURRENT_TIMESTAMP,
     Valor_total DECIMAL(10, 2),
     lleva_mercancia BOOLEAN, 
     id_cliente INT,
