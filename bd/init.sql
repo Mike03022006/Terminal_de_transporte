@@ -245,8 +245,10 @@ CREATE TABLE IF NOT EXISTS Mercancia (
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto)
 );
-CREATE TABLE IF NOT EXISTS Envio(
+CREATE TABLE IF NOT EXISTS Envios(
     id_envio INT AUTO_INCREMENT PRIMARY KEY,
+    id_remitente INT, 
+    id_destinatario INT, 
     peso DECIMAL(10,2),
     id_cliente INT,
     id_ciudad_origen INT,
