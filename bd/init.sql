@@ -161,10 +161,15 @@ CREATE TABLE IF NOT EXISTS Cliente (
     id_tipo_cliente INT,
     id_ciudad_origen INT,
     id_ciudad_residencia INT,
+    id_remitente INT, 
+    id_destinatario INT,
     FOREIGN KEY (id_tipo_cliente) REFERENCES Tipo_cliente(id_tipo_cliente),
     FOREIGN KEY (id_ciudad_origen) REFERENCES Ciudades(id_ciudad),
-    FOREIGN KEY (id_ciudad_residencia) REFERENCES Ciudades(id_ciudad)
+    FOREIGN KEY (id_ciudad_residencia) REFERENCES Ciudades(id_ciudad),
+    FOREIGN KEY (id_remitente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_destinatario) REFERENCES Cliente(id_cliente)
 );
+
 
 CREATE TABLE IF NOT EXISTS Tipo_mantenimiento (
     id_tipo_mantenimiento INT PRIMARY KEY,
@@ -253,10 +258,13 @@ CREATE TABLE IF NOT EXISTS Envios(
     id_cliente INT,
     id_ciudad_origen INT,
     id_ciudad_destino INT,
+    FOREIGN KEY (id_remitente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_destinatario) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_ciudad_origen) REFERENCES Ciudades(id_ciudad),
     FOREIGN KEY (id_ciudad_destino) REFERENCES Ciudades(id_ciudad)
 );
+
 
 CREATE TABLE IF NOT EXISTS Checkout(
     id_checkout INT AUTO_INCREMENT PRIMARY KEY,
