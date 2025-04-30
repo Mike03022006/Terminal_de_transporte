@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS Tipo_mantenimiento (
 );
 
 CREATE TABLE IF NOT EXISTS Mantenimientos (
-    id_mantenimiento INT PRIMARY KEY,
+    id_mantenimiento INT AUTO_INCREMENT PRIMARY KEY,
     Descripcion VARCHAR(255),
     Fecha_mantenimiento DATE,
     id_tipo_mantenimiento INT,
