@@ -233,7 +233,7 @@ CREATE TABLE IF NOT EXISTS Tipo_mercancia (
     Descripcion TEXT
 );
 CREATE TABLE IF NOT EXISTS Mercancia (
-    id_mercancia INT PRIMARY KEY,
+    id_mercancia INT AUTO_INCREMENT PRIMARY KEY,
     descripcion VARCHAR(255),
     peso DECIMAL(10,2),
     valor_estimado DECIMAL(10,2),
@@ -241,6 +241,7 @@ CREATE TABLE IF NOT EXISTS Mercancia (
     id_cliente INT,
     id_viaje INT,
     id_boleto INT,
+    deleted_at DATETIME DEFAULT NULL,
     FOREIGN KEY (id_tipo_mercancia) REFERENCES Tipo_mercancia(id_tipo_mercancia),
     FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
