@@ -245,6 +245,7 @@ CREATE TABLE IF NOT EXISTS Mercancia (
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto)
 );
+
 CREATE TABLE IF NOT EXISTS Factura (
     id_factura INT AUTO_INCREMENT PRIMARY KEY,
     Fecha_facturacion DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -262,6 +263,30 @@ CREATE TABLE IF NOT EXISTS Factura (
     FOREIGN KEY (id_boleto) REFERENCES Boletos(id_boleto),
     FOREIGN KEY (id_equipaje) REFERENCES Equipaje(id_equipaje),
     FOREIGN KEY (id_viaje) REFERENCES Viajes(id_viaje),
+    FOREIGN KEY (id_metodo_pago) REFERENCES Metodo_pago(id_metodo_pago)
+);
+
+CREATE TABLE IF NOT EXISTS Envios(
+    id_envio INT AUTO_INCREMENT PRIMARY KEY,
+    id_remitente INT, 
+    id_destinatario INT, 
+    peso DECIMAL(10,2),
+    id_cliente INT,
+    id_ciudad_origen INT,
+    id_ciudad_destino INT,
+    FOREIGN KEY (id_remitente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_destinatario) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_ciudad_origen) REFERENCES Ciudades(id_ciudad),
+    FOREIGN KEY (id_ciudad_destino) REFERENCES Ciudades(id_ciudad)
+);
+
+
+CREATE TABLE IF NOT EXISTS Checkout(
+    id_checkout INT AUTO_INCREMENT PRIMARY KEY,
+    id_envio INT,     
+    id_metodo_pago INT,
+    FOREIGN KEY (id_envio) REFERENCES Envio(id_envio),
     FOREIGN KEY (id_metodo_pago) REFERENCES Metodo_pago(id_metodo_pago)
 );
 
