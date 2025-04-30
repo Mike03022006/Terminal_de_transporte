@@ -274,12 +274,10 @@ CREATE TABLE IF NOT EXISTS Envios(
     id_remitente INT, 
     id_destinatario INT, 
     peso DECIMAL(10,2),
-    id_cliente INT,
     id_ciudad_origen INT,
     id_ciudad_destino INT,
     FOREIGN KEY (id_remitente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_destinatario) REFERENCES Cliente(id_cliente),
-    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
     FOREIGN KEY (id_ciudad_origen) REFERENCES Ciudades(id_ciudad),
     FOREIGN KEY (id_ciudad_destino) REFERENCES Ciudades(id_ciudad)
 );
