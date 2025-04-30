@@ -111,6 +111,7 @@ CREATE TABLE IF NOT EXISTS Buses (
     id_tipo_bus INT,
     id_empresa INT,
     id_empleado INT,
+    deleted_at DATETIME DEFAULT NULL,
     FOREIGN KEY (id_tipo_bus) REFERENCES Tipo_bus(id_tipo_bus),
     FOREIGN KEY (id_empresa) REFERENCES Empresas(id_empresa),
     FOREIGN KEY (id_empleado) REFERENCES Empleados(cedula_empleado)
@@ -286,7 +287,7 @@ CREATE TABLE IF NOT EXISTS Checkout(
     id_checkout INT AUTO_INCREMENT PRIMARY KEY,
     id_envio INT,     
     id_metodo_pago INT,
-    FOREIGN KEY (id_envio) REFERENCES Envio(id_envio),
+    FOREIGN KEY (id_envio) REFERENCES Envios(id_envio),
     FOREIGN KEY (id_metodo_pago) REFERENCES Metodo_pago(id_metodo_pago)
 );
 
