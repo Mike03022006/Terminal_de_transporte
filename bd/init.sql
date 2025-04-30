@@ -57,12 +57,13 @@ CREATE TABLE IF NOT EXISTS Tipo_empresa (
 );
 
 CREATE TABLE IF NOT EXISTS Empresas (
-    id_empresa INT PRIMARY KEY,
+    id_empresa INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(255),
     Telefono VARCHAR(50),
     Correo VARCHAR(255),
     Direccion VARCHAR(255),
     id_tipo_empresa INT,
+    deleted_at DATETIME DEFAULT NULL,
     FOREIGN KEY (id_tipo_empresa) REFERENCES Tipo_empresa(id_tipo_empresa)
 );
 
